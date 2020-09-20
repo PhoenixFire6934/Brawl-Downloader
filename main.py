@@ -52,7 +52,7 @@ class Connection():
         r = Reader(data)
         code = r.readUInt32()
 
-        if code == 7:
+        if code == 7 or code == 8:
             self.fingerprint = json.loads(r.readFinger()) # fingerprint
             r.readInt32()
             r.readShort()
